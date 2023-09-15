@@ -1,0 +1,1227 @@
+{
+  "height": "13185617",
+  "txhash": "1398ED1E3BD1797AB60606A38569B89F275646E5D4553573605AB386FEDEE5DD",
+  "codespace": "",
+  "code": 0,
+  "data": "12330A252F636F736D6F732E617574687A2E763162657461312E4D736745786563526573706F6E7365120A0A000A000A000A000A00",
+  "raw_log": "[{\"msg_index\":0,\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"/cosmos.authz.v1beta1.MsgExec\"},{\"key\":\"sender\",\"value\":\"persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u\"},{\"key\":\"module\",\"value\":\"authz\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"139uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa\"},{\"key\":\"amount\",\"value\":\"139uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa\"},{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"139uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"139uxprt\"},{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"delegator\",\"value\":\"persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa\"},{\"key\":\"amount\",\"value\":\"119uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn\"},{\"key\":\"amount\",\"value\":\"119uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"amount\",\"value\":\"119uxprt\"},{\"key\":\"new_shares\",\"value\":\"119.000000000000000000\"},{\"key\":\"authz_msg_index\",\"value\":\"0\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"2308uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7\"},{\"key\":\"amount\",\"value\":\"2308uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7\"},{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"2308uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"2308uxprt\"},{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"delegator\",\"value\":\"persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7\"},{\"key\":\"amount\",\"value\":\"2011uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn\"},{\"key\":\"amount\",\"value\":\"2011uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"amount\",\"value\":\"2011uxprt\"},{\"key\":\"new_shares\",\"value\":\"2011.000000000000000000\"},{\"key\":\"authz_msg_index\",\"value\":\"1\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql\"},{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"delegator\",\"value\":\"persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql\"},{\"key\":\"amount\",\"value\":\"14uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn\"},{\"key\":\"amount\",\"value\":\"14uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"amount\",\"value\":\"14uxprt\"},{\"key\":\"new_shares\",\"value\":\"14.000000000000000000\"},{\"key\":\"authz_msg_index\",\"value\":\"2\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"28217uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn\"},{\"key\":\"amount\",\"value\":\"28217uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn\"},{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"28217uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"28217uxprt\"},{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"delegator\",\"value\":\"persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn\"},{\"key\":\"amount\",\"value\":\"26557uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn\"},{\"key\":\"amount\",\"value\":\"26557uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"amount\",\"value\":\"26557uxprt\"},{\"key\":\"new_shares\",\"value\":\"26557.000000000000000000\"},{\"key\":\"authz_msg_index\",\"value\":\"3\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"17uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr\"},{\"key\":\"amount\",\"value\":\"17uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr\"},{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"amount\",\"value\":\"17uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"message\",\"attributes\":[{\"key\":\"sender\",\"value\":\"persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"withdraw_rewards\",\"attributes\":[{\"key\":\"amount\",\"value\":\"17uxprt\"},{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"delegator\",\"value\":\"persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"coin_spent\",\"attributes\":[{\"key\":\"spender\",\"value\":\"persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"coin_received\",\"attributes\":[{\"key\":\"receiver\",\"value\":\"persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]},{\"type\":\"delegate\",\"attributes\":[{\"key\":\"validator\",\"value\":\"persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty\"},{\"key\":\"amount\",\"value\":\"16uxprt\"},{\"key\":\"new_shares\",\"value\":\"16.000000000000000000\"},{\"key\":\"authz_msg_index\",\"value\":\"4\"}]}]}]",
+  "logs": [
+    {
+      "msg_index": 0,
+      "log": "",
+      "events": [
+        {
+          "type": "message",
+          "attributes": [
+            { "key": "action", "value": "/cosmos.authz.v1beta1.MsgExec" },
+            {
+              "key": "sender",
+              "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u"
+            },
+            { "key": "module", "value": "authz" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "139uxprt" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa"
+            },
+            { "key": "amount", "value": "139uxprt" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa"
+            },
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "139uxprt" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "withdraw_rewards",
+          "attributes": [
+            { "key": "amount", "value": "139uxprt" },
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            {
+              "key": "delegator",
+              "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa"
+            },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa"
+            },
+            { "key": "amount", "value": "119uxprt" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn"
+            },
+            { "key": "amount", "value": "119uxprt" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "delegate",
+          "attributes": [
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            { "key": "amount", "value": "119uxprt" },
+            { "key": "new_shares", "value": "119.000000000000000000" },
+            { "key": "authz_msg_index", "value": "0" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "2308uxprt" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7"
+            },
+            { "key": "amount", "value": "2308uxprt" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7"
+            },
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "2308uxprt" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "withdraw_rewards",
+          "attributes": [
+            { "key": "amount", "value": "2308uxprt" },
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            {
+              "key": "delegator",
+              "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7"
+            },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7"
+            },
+            { "key": "amount", "value": "2011uxprt" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn"
+            },
+            { "key": "amount", "value": "2011uxprt" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "delegate",
+          "attributes": [
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            { "key": "amount", "value": "2011uxprt" },
+            { "key": "new_shares", "value": "2011.000000000000000000" },
+            { "key": "authz_msg_index", "value": "1" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql"
+            },
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "withdraw_rewards",
+          "attributes": [
+            { "key": "amount", "value": "16uxprt" },
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            {
+              "key": "delegator",
+              "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql"
+            },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql"
+            },
+            { "key": "amount", "value": "14uxprt" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn"
+            },
+            { "key": "amount", "value": "14uxprt" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "delegate",
+          "attributes": [
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            { "key": "amount", "value": "14uxprt" },
+            { "key": "new_shares", "value": "14.000000000000000000" },
+            { "key": "authz_msg_index", "value": "2" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "28217uxprt" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn"
+            },
+            { "key": "amount", "value": "28217uxprt" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn"
+            },
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "28217uxprt" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "withdraw_rewards",
+          "attributes": [
+            { "key": "amount", "value": "28217uxprt" },
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            {
+              "key": "delegator",
+              "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn"
+            },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn"
+            },
+            { "key": "amount", "value": "26557uxprt" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn"
+            },
+            { "key": "amount", "value": "26557uxprt" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "delegate",
+          "attributes": [
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            { "key": "amount", "value": "26557uxprt" },
+            { "key": "new_shares", "value": "26557.000000000000000000" },
+            { "key": "authz_msg_index", "value": "3" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "17uxprt" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr"
+            },
+            { "key": "amount", "value": "17uxprt" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr"
+            },
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "amount", "value": "17uxprt" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "sender",
+              "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m"
+            },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "withdraw_rewards",
+          "attributes": [
+            { "key": "amount", "value": "17uxprt" },
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            {
+              "key": "delegator",
+              "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr"
+            },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "coin_spent",
+          "attributes": [
+            {
+              "key": "spender",
+              "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "coin_received",
+          "attributes": [
+            {
+              "key": "receiver",
+              "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        },
+        {
+          "type": "delegate",
+          "attributes": [
+            {
+              "key": "validator",
+              "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty"
+            },
+            { "key": "amount", "value": "16uxprt" },
+            { "key": "new_shares", "value": "16.000000000000000000" },
+            { "key": "authz_msg_index", "value": "4" }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": "",
+  "gas_wanted": "1422537",
+  "gas_used": "750208",
+  "tx": {
+    "@type": "/cosmos.tx.v1beta1.Tx",
+    "body": {
+      "messages": [
+        {
+          "@type": "/cosmos.authz.v1beta1.MsgExec",
+          "grantee": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "msgs": [
+            {
+              "@type": "/cosmos.staking.v1beta1.MsgDelegate",
+              "delegator_address": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa",
+              "validator_address": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+              "amount": { "denom": "uxprt", "amount": "119" }
+            },
+            {
+              "@type": "/cosmos.staking.v1beta1.MsgDelegate",
+              "delegator_address": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7",
+              "validator_address": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+              "amount": { "denom": "uxprt", "amount": "2011" }
+            },
+            {
+              "@type": "/cosmos.staking.v1beta1.MsgDelegate",
+              "delegator_address": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql",
+              "validator_address": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+              "amount": { "denom": "uxprt", "amount": "14" }
+            },
+            {
+              "@type": "/cosmos.staking.v1beta1.MsgDelegate",
+              "delegator_address": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn",
+              "validator_address": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+              "amount": { "denom": "uxprt", "amount": "26557" }
+            },
+            {
+              "@type": "/cosmos.staking.v1beta1.MsgDelegate",
+              "delegator_address": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr",
+              "validator_address": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+              "amount": { "denom": "uxprt", "amount": "16" }
+            }
+          ]
+        }
+      ],
+      "memo": "REStaked by  AutoStake 🛡️ Slash Protected",
+      "timeout_height": "0",
+      "extension_options": [],
+      "non_critical_extension_options": []
+    },
+    "auth_info": {
+      "signer_infos": [
+        {
+          "public_key": {
+            "@type": "/cosmos.crypto.secp256k1.PubKey",
+            "key": "At3XCrR7I2qHw6X+H4nMb5Mpw/dxn789nE7VcIA0OWlB"
+          },
+          "mode_info": { "single": { "mode": "SIGN_MODE_DIRECT" } },
+          "sequence": "535014"
+        }
+      ],
+      "fee": {
+        "amount": [{ "denom": "uxprt", "amount": "2" }],
+        "gas_limit": "1422537",
+        "payer": "",
+        "granter": ""
+      },
+      "tip": null
+    },
+    "signatures": [
+      "chgTPG8NsVT2Tz8sOAGEpkufSHHouVkM1bw7+wwyLZc2IF1wjsY15yCnTpzbomu+sCmkCfHi7aEhrwPd3ToFAQ=="
+    ]
+  },
+  "timestamp": "2023-09-15T05:02:06Z",
+  "events": [
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "index": true
+        },
+        { "key": "amount", "value": "2uxprt", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence17xpfvakm2amg962yls6f84z3kell8c5l749n9e",
+          "index": true
+        },
+        { "key": "amount", "value": "2uxprt", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence17xpfvakm2amg962yls6f84z3kell8c5l749n9e",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "index": true
+        },
+        { "key": "amount", "value": "2uxprt", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "index": true
+        }
+      ]
+    },
+    {
+      "type": "tx",
+      "attributes": [
+        { "key": "fee", "value": "2uxprt", "index": true },
+        {
+          "key": "fee_payer",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "index": true
+        }
+      ]
+    },
+    {
+      "type": "tx",
+      "attributes": [
+        {
+          "key": "acc_seq",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u/535014",
+          "index": true
+        }
+      ]
+    },
+    {
+      "type": "tx",
+      "attributes": [
+        {
+          "key": "signature",
+          "value": "chgTPG8NsVT2Tz8sOAGEpkufSHHouVkM1bw7+wwyLZc2IF1wjsY15yCnTpzbomu+sCmkCfHi7aEhrwPd3ToFAQ==",
+          "index": true
+        }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "action",
+          "value": "/cosmos.authz.v1beta1.MsgExec",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence10ys69560pqr6zmqam80g8s0smtjw6p3ugzmy3u",
+          "index": true
+        },
+        { "key": "module", "value": "authz", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "139uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa",
+          "index": true
+        },
+        { "key": "amount", "value": "139uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "139uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "withdraw_rewards",
+      "attributes": [
+        { "key": "amount", "value": "139uxprt", "index": true },
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        {
+          "key": "delegator",
+          "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence12fchf0lrjs535m5jue5ff9v3epgvh8emjg80xa",
+          "index": true
+        },
+        { "key": "amount", "value": "119uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn",
+          "index": true
+        },
+        { "key": "amount", "value": "119uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "delegate",
+      "attributes": [
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        { "key": "amount", "value": "119uxprt", "index": true },
+        {
+          "key": "new_shares",
+          "value": "119.000000000000000000",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "0", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "2308uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7",
+          "index": true
+        },
+        { "key": "amount", "value": "2308uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "2308uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "withdraw_rewards",
+      "attributes": [
+        { "key": "amount", "value": "2308uxprt", "index": true },
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        {
+          "key": "delegator",
+          "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1r7qc64ualdewpalhyuwtssuqqm0zndmq34y6s7",
+          "index": true
+        },
+        { "key": "amount", "value": "2011uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn",
+          "index": true
+        },
+        { "key": "amount", "value": "2011uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "delegate",
+      "attributes": [
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        { "key": "amount", "value": "2011uxprt", "index": true },
+        {
+          "key": "new_shares",
+          "value": "2011.000000000000000000",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "1", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "withdraw_rewards",
+      "attributes": [
+        { "key": "amount", "value": "16uxprt", "index": true },
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        {
+          "key": "delegator",
+          "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1tnsd8354rp3flf5je9zva0s2xktrgwec7v7gql",
+          "index": true
+        },
+        { "key": "amount", "value": "14uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn",
+          "index": true
+        },
+        { "key": "amount", "value": "14uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "delegate",
+      "attributes": [
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        { "key": "amount", "value": "14uxprt", "index": true },
+        {
+          "key": "new_shares",
+          "value": "14.000000000000000000",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "2", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "28217uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn",
+          "index": true
+        },
+        { "key": "amount", "value": "28217uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "28217uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "withdraw_rewards",
+      "attributes": [
+        { "key": "amount", "value": "28217uxprt", "index": true },
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        {
+          "key": "delegator",
+          "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1d2xf6wdycq2nlusdnzfmyn8g37jekyr66cglyn",
+          "index": true
+        },
+        { "key": "amount", "value": "26557uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn",
+          "index": true
+        },
+        { "key": "amount", "value": "26557uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "delegate",
+      "attributes": [
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        { "key": "amount", "value": "26557uxprt", "index": true },
+        {
+          "key": "new_shares",
+          "value": "26557.000000000000000000",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "3", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "17uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr",
+          "index": true
+        },
+        { "key": "amount", "value": "17uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "transfer",
+      "attributes": [
+        {
+          "key": "recipient",
+          "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr",
+          "index": true
+        },
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "amount", "value": "17uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "message",
+      "attributes": [
+        {
+          "key": "sender",
+          "value": "persistence1jv65s3grqf6v6jl3dp4t6c9t9rk99cd8fnz08m",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "withdraw_rewards",
+      "attributes": [
+        { "key": "amount", "value": "17uxprt", "index": true },
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        {
+          "key": "delegator",
+          "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "coin_spent",
+      "attributes": [
+        {
+          "key": "spender",
+          "value": "persistence1vgmslv3tc4r0kfzq3mpdugrkkn7sxq3emp0tlr",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "coin_received",
+      "attributes": [
+        {
+          "key": "receiver",
+          "value": "persistence1fl48vsnmsdzcv85q5d2q4z5ajdha8yu3mh0uhn",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    },
+    {
+      "type": "delegate",
+      "attributes": [
+        {
+          "key": "validator",
+          "value": "persistencevaloper16jd664rd04j5lyckykjedt7vrha7k822vlkxty",
+          "index": true
+        },
+        { "key": "amount", "value": "16uxprt", "index": true },
+        {
+          "key": "new_shares",
+          "value": "16.000000000000000000",
+          "index": true
+        },
+        { "key": "authz_msg_index", "value": "4", "index": true }
+      ]
+    }
+  ]
+}

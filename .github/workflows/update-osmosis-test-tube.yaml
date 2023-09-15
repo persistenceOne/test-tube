@@ -1,10 +1,10 @@
-name: update osmosis-test-tube
+name: update persistence-test-tube
 on:
   workflow_dispatch:
-    name: update osmosis-test-tube
+    name: update persistence-test-tube
     inputs:
       osmosis_rev:
-        description: "osmosis revision"
+        description: "persistencecore revision"
         required: true
         type: string
 

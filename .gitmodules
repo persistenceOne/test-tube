@@ -1,4 +1,4 @@
-[submodule "packages/osmosis-test-tube/osmosis"]
+[submodule "packages/persistence-test-tube/persistencecore"]
 	path = packages/osmosis-test-tube/osmosis
 	url = https://github.com/osmosis-labs/osmosis.git
 	branch = main
