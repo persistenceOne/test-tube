@@ -5,6 +5,7 @@ import "C"
 import (
 	// std
 	"encoding/base64"
+	"encoding/json"
 	"fmt"
 	"os"
 	"sync"
@@ -20,7 +21,10 @@ import (
 
 	// cosmos-sdk
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
+	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/testutil"
+	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
 	// cosmwasm-testing
 	"github.com/persistenceOne/test-tube/persistence-test-tube/result"
@@ -66,6 +70,55 @@ func CleanUp(envId uint64) {
 		panic(err)
 	}
 	envRegister.Delete(envId)
+}
+
+//export InitAccount
+func InitAccount(envId uint64, coinsJson string) *C.char {
+	env := loadEnv(envId)
+	var coins sdk.Coins
+
+	if err := json.Unmarshal([]byte(coinsJson), &coins); err != nil {
+		panic(err)
+	}
+
+	priv := secp256k1.GenPrivKey()
+	accAddr := sdk.AccAddress(priv.PubKey().Address())
+
+	for _, coin := range coins {
+		// create denom if not exist
+		_, hasDenomMetaData := env.App.BankKeeper.GetDenomMetaData(env.Ctx, coin.Denom)
+		if !hasDenomMetaData {
+			denomMetaData := banktypes.Metadata{
+				DenomUnits: []*banktypes.DenomUnit{{
+					Denom:    coin.Denom,
+					Exponent: 0,
+				}},
+				Base: coin.Denom,
+			}
+
+			env.App.BankKeeper.SetDenomMetaData(env.Ctx, denomMetaData)
+		}
+
+	}
+
+	err := banktestutil.FundAccount(env.App.BankKeeper, env.Ctx, accAddr, coins)
+	if err != nil {
+		panic(errors.Wrapf(err, "Failed to fund account"))
+	}
+
+	base64Priv := base64.StdEncoding.EncodeToString(priv.Bytes())
+
+	envRegister.Store(envId, env)
+
+	return C.CString(base64Priv)
+}
+
+//export IncreaseTime
+func IncreaseTime(envId uint64, seconds uint64) {
+	env := loadEnv(envId)
+	env.BeginNewBlock(seconds)
+	envRegister.Store(envId, env)
+	EndBlock(envId)
 }
 
 //export BeginBlock
