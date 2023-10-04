@@ -1,11 +1,8 @@
 #![cfg(feature = "wasm")]
 
 use cosmwasm_std::Coin;
-use osmosis_std::types::cosmwasm::wasm::v1::{
-    AccessConfig, MsgExecuteContract, MsgExecuteContractResponse, MsgInstantiateContract,
-    MsgInstantiateContractResponse, MsgStoreCode, MsgStoreCodeResponse,
-    QuerySmartContractStateRequest, QuerySmartContractStateResponse,
-};
+
+use persistence_std::types::cosmwasm::wasm::v1::{AccessConfig, MsgStoreCodeResponse, MsgStoreCode, MsgInstantiateContractResponse, MsgInstantiateContract, MsgExecuteContractResponse, MsgExecuteContract, QuerySmartContractStateRequest, QuerySmartContractStateResponse};
 use serde::{de::DeserializeOwned, Serialize};
 
 use crate::runner::error::{DecodeError, EncodeError, RunnerError};
@@ -67,7 +64,7 @@ where
                 msg: serde_json::to_vec(msg).map_err(EncodeError::JsonEncodeError)?,
                 funds: funds
                     .iter()
-                    .map(|c| osmosis_std::types::cosmos::base::v1beta1::Coin {
+                    .map(|c| persistence_std::types::cosmos::base::v1beta1::Coin {
                         denom: c.denom.parse().unwrap(),
                         amount: format!("{}", c.amount.u128()),
                     })
@@ -94,7 +91,7 @@ where
                 msg: serde_json::to_vec(msg).map_err(EncodeError::JsonEncodeError)?,
                 funds: funds
                     .iter()
-                    .map(|c| osmosis_std::types::cosmos::base::v1beta1::Coin {
+                    .map(|c| persistence_std::types::cosmos::base::v1beta1::Coin {
                         denom: c.denom.parse().unwrap(),
                         amount: format!("{}", c.amount.u128()),
                     })
