@@ -1,6 +1,7 @@
 use crate::runner::error::{DecodeError, RunnerError};
 use cosmrs::proto::cosmos::base::abci::v1beta1::{GasInfo, TxMsgData};
-use cosmrs::proto::tendermint::abci::ResponseDeliverTx;
+use cosmrs::proto::tendermint::v0_37::abci::ResponseDeliverTx;
+// use cosmrs::proto::tendermint::abci::ResponseDeliverTx;
 use cosmrs::rpc::endpoint::broadcast::tx_commit::Response as TxCommitResponse;
 use cosmwasm_std::{Attribute, Event};
 use prost::Message;
@@ -28,17 +29,35 @@ where
     type Error = RunnerError;
 
     fn try_from(res: ResponseDeliverTx) -> Result<Self, Self::Error> {
+        println!("response deliver tx: {:?}", res);
+
+        println!();
+        println!();
+        println!();
+        // res data
+        println!("res data: {:?}", res.data);
+
+        // binary to base64
+        let base64 = base64::encode(res.data.clone());
+        println!("base64: {}", base64);
+        
         let tx_msg_data =
-            TxMsgData::decode(res.data.as_slice()).map_err(DecodeError::ProtoDecodeError)?;
+            TxMsgData::decode(res.data.clone());
+
+        println!("\n\ntx_msg_data original: {:?}\n", tx_msg_data);
+
+        let tx_msg_data = tx_msg_data.map_err(DecodeError::ProtoDecodeError)?;
+
+        println!("tx_msg_data: {:?}", tx_msg_data);
 
         let msg_data = &tx_msg_data
-            .data
+            .msg_responses
             // since this tx contains exactly 1 msg
             // when getting none of them, that means error
             .get(0)
             .ok_or(RunnerError::ExecuteError { msg: res.log })?;
 
-        let data = R::decode(msg_data.data.as_slice()).map_err(DecodeError::ProtoDecodeError)?;
+        let data = R::decode(msg_data.value.as_slice()).map_err(DecodeError::ProtoDecodeError)?;
 
         let events = res
             .events
@@ -49,8 +68,8 @@ where
                         .into_iter()
                         .map(|a| -> Result<Attribute, Utf8Error> {
                             Ok(Attribute {
-                                key: std::str::from_utf8(a.key.as_slice())?.to_string(),
-                                value: std::str::from_utf8(a.value.as_slice())?.to_string(),
+                                key: std::str::from_utf8(a.key.as_bytes())?.to_string(),
+                                value: std::str::from_utf8(a.value.as_bytes())?.to_string(),
                             })
                         })
                         .collect::<Result<Vec<Attribute>, Utf8Error>>()?,
@@ -60,7 +79,7 @@ where
 
         Ok(ExecuteResponse {
             data,
-            raw_data: res.data,
+            raw_data: res.data.to_vec(),
             events,
             gas_info: GasInfo {
                 gas_wanted: res.gas_wanted as u64,
@@ -77,12 +96,15 @@ where
     type Error = RunnerError;
 
     fn try_from(tx_commit_response: TxCommitResponse) -> Result<Self, Self::Error> {
-        let res = tx_commit_response.deliver_tx;
-        let tx_msg_data = TxMsgData::decode(res.data.clone().unwrap().value().as_slice())
+        let res = tx_commit_response.tx_result;
+        println!("res: {:?}", res);
+        let tx_msg_data = TxMsgData::decode(res.data.clone())
             .map_err(DecodeError::ProtoDecodeError)?;
 
+        println!("tx_msg_data: {:?}", tx_msg_data);
+
         let msg_data = &tx_msg_data
-            .data
+            .msg_responses
             // since this tx contains exactly 1 msg
             // when getting none of them, that means error
             .get(0)
@@ -90,13 +112,13 @@ where
                 msg: res.log.to_string(),
             })?;
 
-        let data = R::decode(msg_data.data.as_slice()).map_err(DecodeError::ProtoDecodeError)?;
+        let data = R::decode(msg_data.value.as_slice()).map_err(DecodeError::ProtoDecodeError)?;
 
         let events = res
             .events
             .into_iter()
             .map(|e| -> Result<Event, DecodeError> {
-                Ok(Event::new(e.type_str).add_attributes(
+                Ok(Event::new(e.kind).add_attributes(
                     e.attributes
                         .into_iter()
                         .map(|a| -> Result<Attribute, Utf8Error> {
@@ -112,11 +134,11 @@ where
 
         Ok(Self {
             data,
-            raw_data: res.data.unwrap().value().clone(),
+            raw_data: res.data.to_vec(),
             events,
             gas_info: GasInfo {
-                gas_wanted: res.gas_wanted.value(),
-                gas_used: res.gas_used.value(),
+                gas_wanted: res.gas_wanted as u64,
+                gas_used: res.gas_used as u64,
             },
         })
     }
@@ -176,8 +198,11 @@ impl RawResult {
                 1 => RunnerError::QueryError {
                     msg: content_string,
                 },
-                2 => RunnerError::ExecuteError {
-                    msg: content_string,
+                2 => {
+                    println!("EXECUTE ERROR: {}", content_string);
+                    RunnerError::ExecuteError {
+                        msg: content_string,
+                    }
                 },
                 _ => panic!("undefined code: {}", code),
             };

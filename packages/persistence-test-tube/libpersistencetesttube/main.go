@@ -150,18 +150,26 @@ func Execute(envId uint64, base64ReqDeliverTx string) *C.char {
 	}
 
 	reqDeliverTx := abci.RequestDeliverTx{}
+	// print
+	// fmt.Printf("reqDeliverTxBytes: %v\n", reqDeliverTxBytes)
 	err = proto.Unmarshal(reqDeliverTxBytes, &reqDeliverTx)
+
+	// fmt.Printf("err: %v\n", err)
 	if err != nil {
 		return encodeErrToResultBytes(result.ExecuteError, err)
 	}
 
 	resDeliverTx := env.App.DeliverTx(reqDeliverTx)
+
+	fmt.Println("resDeliverTx", resDeliverTx.Data)
 	bz, err := proto.Marshal(&resDeliverTx)
 
+	// fmt.Printf("err: %v\n", err)
 	if err != nil {
 		panic(err)
 	}
 
+	// fmt.Printf("bz: %v\n", bz)
 	envRegister.Store(envId, env)
 
 	return encodeBytesResultBytes(bz)

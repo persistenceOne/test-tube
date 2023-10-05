@@ -32,7 +32,7 @@ where
         instantiate_permission: Option<AccessConfig>,
         signer: &SigningAccount,
     ) -> RunnerExecuteResult<MsgStoreCodeResponse> {
-        self.runner.execute(
+        let res =  self.runner.execute(
             MsgStoreCode {
                 sender: signer.address(),
                 wasm_byte_code: wasm_byte_code.to_vec(),
@@ -40,7 +40,10 @@ where
             },
             "/cosmwasm.wasm.v1.MsgStoreCode",
             signer,
-        )
+        );
+
+        println!("res: {:?}", res);
+        res
     }
 
     pub fn instantiate<M>(

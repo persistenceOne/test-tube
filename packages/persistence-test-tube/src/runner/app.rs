@@ -1,5 +1,6 @@
 use cosmrs::Any;
 
+use cosmrs::proto::cosmos::base::abci::v1beta1::GasInfo;
 use cosmwasm_std::{Coin, Timestamp};
 
 use prost::Message;
@@ -89,7 +90,7 @@ impl PersistenceTestApp {
         &self,
         msgs: I,
         signer: &SigningAccount,
-    ) -> RunnerResult<cosmrs::proto::cosmos::base::abci::v1beta1::GasInfo>
+    ) -> RunnerResult<GasInfo>
     where
         I: IntoIterator<Item = cosmrs::Any>,
     {
@@ -196,6 +197,25 @@ mod tests {
         app.increase_time(10u64);
 
         assert_eq!(app.get_block_height(), 2i64);
+    }
+
+    #[test]
+    fn store_code() {
+        let app = PersistenceTestApp::default();
+        let wasm = Wasm::new(&app);
+
+        let cargo_manifest_dir = std::env::var("CARGO_MANIFEST_DIR").unwrap();
+        let wasm_byte_code = std::fs::read(format!(
+            "{}/test_artifacts/cw1_whitelist.wasm",
+            cargo_manifest_dir
+        )).unwrap();
+
+        // store
+        let res = wasm
+            .store_code(&wasm_byte_code, None, &app.get_first_validator_signing_account().unwrap())
+            .unwrap();
+
+        assert_eq!(res.data.code_id, 1);
     }
 
     // #[test]
