@@ -10,10 +10,10 @@ use test_tube::runner::result::{RunnerExecuteResult, RunnerResult};
 use test_tube::runner::Runner;
 use test_tube::BaseApp;
 
-const FEE_DENOM: &str = "uosmo";
-const OSMO_ADDRESS_PREFIX: &str = "osmo";
-const CHAIN_ID: &str = "osmosis-1";
-const DEFAULT_GAS_ADJUSTMENT: f64 = 1.2;
+const FEE_DENOM: &str = "uxprt";
+const OSMO_ADDRESS_PREFIX: &str = "persistence";
+const CHAIN_ID: &str = "core-1";
+const DEFAULT_GAS_ADJUSTMENT: f64 = 1.5;
 
 #[derive(Debug, PartialEq)]
 pub struct PersistenceTestApp {
@@ -162,7 +162,7 @@ mod tests {
     fn test_init_accounts() {
         let app = PersistenceTestApp::default();
         let accounts = app
-            .init_accounts(&coins(100_000_000_000, "uosmo"), 3)
+            .init_accounts(&coins(100_000_000_000, "uxprt"), 3)
             .unwrap();
 
         assert!(accounts.get(0).is_some());
