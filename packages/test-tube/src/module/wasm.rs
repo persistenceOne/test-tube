@@ -42,7 +42,6 @@ where
             signer,
         );
 
-        println!("res: {:?}", res);
         res
     }
 

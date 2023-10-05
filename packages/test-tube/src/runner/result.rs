@@ -29,26 +29,8 @@ where
     type Error = RunnerError;
 
     fn try_from(res: ResponseDeliverTx) -> Result<Self, Self::Error> {
-        println!("response deliver tx: {:?}", res);
-
-        println!();
-        println!();
-        println!();
-        // res data
-        println!("res data: {:?}", res.data);
-
-        // binary to base64
-        let base64 = base64::encode(res.data.clone());
-        println!("base64: {}", base64);
-        
-        let tx_msg_data =
-            TxMsgData::decode(res.data.clone());
-
-        println!("\n\ntx_msg_data original: {:?}\n", tx_msg_data);
-
+        let tx_msg_data = TxMsgData::decode(res.data.clone());
         let tx_msg_data = tx_msg_data.map_err(DecodeError::ProtoDecodeError)?;
-
-        println!("tx_msg_data: {:?}", tx_msg_data);
 
         let msg_data = &tx_msg_data
             .msg_responses
@@ -97,11 +79,8 @@ where
 
     fn try_from(tx_commit_response: TxCommitResponse) -> Result<Self, Self::Error> {
         let res = tx_commit_response.tx_result;
-        println!("res: {:?}", res);
         let tx_msg_data = TxMsgData::decode(res.data.clone())
             .map_err(DecodeError::ProtoDecodeError)?;
-
-        println!("tx_msg_data: {:?}", tx_msg_data);
 
         let msg_data = &tx_msg_data
             .msg_responses
@@ -198,11 +177,8 @@ impl RawResult {
                 1 => RunnerError::QueryError {
                     msg: content_string,
                 },
-                2 => {
-                    println!("EXECUTE ERROR: {}", content_string);
-                    RunnerError::ExecuteError {
-                        msg: content_string,
-                    }
+                2 => RunnerError::ExecuteError {
+                    msg: content_string,
                 },
                 _ => panic!("undefined code: {}", code),
             };

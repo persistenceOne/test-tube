@@ -371,8 +371,6 @@ impl<'a> Runner<'a> for BaseApp {
                 let res = Execute(self.id, base64_req);
                 let res = RawResult::from_non_null_ptr(res).into_result()?;
 
-                // println!("res: {:?}", res);
-
                 ResponseDeliverTx::decode(res.as_slice())
                     .map_err(DecodeError::ProtoDecodeError)?
                     .try_into()
