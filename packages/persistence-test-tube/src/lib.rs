@@ -7,8 +7,8 @@ pub use cosmrs;
 
 pub use module::*;
 pub use runner::app::PersistenceTestApp;
-pub use test_tube::account::{Account, FeeSetting, NonSigningAccount, SigningAccount};
-pub use test_tube::runner::error::{DecodeError, EncodeError, RunnerError};
-pub use test_tube::runner::result::{ExecuteResponse, RunnerExecuteResult, RunnerResult};
-pub use test_tube::runner::Runner;
-pub use test_tube::{fn_execute, fn_query};
+pub use test_tube_x::account::{Account, FeeSetting, NonSigningAccount, SigningAccount};
+pub use test_tube_x::runner::error::{DecodeError, EncodeError, RunnerError};
+pub use test_tube_x::runner::result::{ExecuteResponse, RunnerExecuteResult, RunnerResult};
+pub use test_tube_x::runner::Runner;
+pub use test_tube_x::{fn_execute, fn_query};

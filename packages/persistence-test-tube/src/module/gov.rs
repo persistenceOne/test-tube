@@ -1,10 +1,10 @@
 use persistence_std::shim::Any;
 use persistence_std::types::cosmos::base::v1beta1::Coin;
 use persistence_std::types::cosmos::gov::v1::{MsgSubmitProposal, MsgSubmitProposalResponse, MsgVoteResponse, QueryProposalRequest, QueryProposalResponse, QueryParamsRequest, QueryParamsResponse, MsgVote, VoteOption};
-use test_tube::{fn_execute, fn_query, Account, RunnerExecuteResult, SigningAccount};
+use test_tube_x::{fn_execute, fn_query, Account, RunnerExecuteResult, SigningAccount};
 
-use test_tube::module::Module;
-use test_tube::runner::Runner;
+use test_tube_x::module::Module;
+use test_tube_x::runner::Runner;
 
 use crate::PersistenceTestApp;
 
