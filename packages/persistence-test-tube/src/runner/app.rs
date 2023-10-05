@@ -12,7 +12,7 @@ use test_tube::BaseApp;
 
 const FEE_DENOM: &str = "uxprt";
 const OSMO_ADDRESS_PREFIX: &str = "persistence";
-const CHAIN_ID: &str = "core-1";
+const CHAIN_ID: &str = "test-core-1";
 const DEFAULT_GAS_ADJUSTMENT: f64 = 1.5;
 
 #[derive(Debug, PartialEq)]
