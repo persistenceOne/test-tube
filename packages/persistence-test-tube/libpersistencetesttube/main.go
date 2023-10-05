@@ -9,33 +9,26 @@ import (
 	"fmt"
 	"os"
 	"sync"
-	"time"
 
-	// helpers
-	_ "github.com/gogo/protobuf/gogoproto"
-	proto "github.com/gogo/protobuf/proto"
 	"github.com/pkg/errors"
 
-	// tendermint
-	abci "github.com/tendermint/tendermint/abci/types"
-	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
+	// proto
+	_ "github.com/cosmos/gogoproto/gogoproto"
+	"github.com/cosmos/gogoproto/proto"
 
-	// cosmos sdk
+	// cometbft
+	abci "github.com/cometbft/cometbft/abci/types"
 
+	// cosmos-sdk
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
-	"github.com/cosmos/cosmos-sdk/simapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	banktestutil "github.com/cosmos/cosmos-sdk/x/bank/testutil"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	// wasmd
-	wasmtypes "github.com/CosmWasm/wasmd/x/wasm/types"
-
 	// cosmwasm-testing
-	"github.com/osmosis-labs/test-tube/osmosis-test-tube/result"
-	"github.com/osmosis-labs/test-tube/osmosis-test-tube/testenv"
-	// osmosis
-	// lockuptypes "github.com/osmosis-labs/osmosis/v16/x/lockup/types"
+	"github.com/persistenceOne/test-tube/persistence-test-tube/result"
+	"github.com/persistenceOne/test-tube/persistence-test-tube/testenv"
 )
 
 var (
@@ -53,31 +46,19 @@ func InitTestEnv() uint64 {
 	envCounter += 1
 	id := envCounter
 
-	nodeHome, err := os.MkdirTemp("", ".osmosis-test-tube-temp-")
+	chainID := "test-core-1"
+	nodeHome, err := os.MkdirTemp("", ".persistence-test-tube-temp-")
 	if err != nil {
 		panic(err)
 	}
 
-	env := new(testenv.TestEnv)
-	env.App = testenv.SetupOsmosisApp(nodeHome)
-	env.NodeHome = nodeHome
-	env.ParamTypesRegistry = *testenv.NewParamTypeRegistry()
+	env := testenv.NewTestEnv(chainID, nodeHome)
 
-	env.SetupParamTypes()
-
-	// Allow testing unoptimized contract
-	wasmtypes.MaxWasmSize = 1024 * 1024 * 1024 * 1024 * 1024
-
-	env.Ctx = env.App.BaseApp.NewContext(false, tmproto.Header{Height: 0, ChainID: "osmosis-1", Time: time.Now().UTC()})
-
-	env.BeginNewBlock(false, 5)
-
-	reqEndBlock := abci.RequestEndBlock{Height: env.Ctx.BlockHeight()}
-	env.App.EndBlock(reqEndBlock)
+	env.BeginNewBlock(5)
+	env.App.EndBlock(abci.RequestEndBlock{Height: env.Ctx.BlockHeight()})
 	env.App.Commit()
 
 	envRegister.Store(id, *env)
-
 	return id
 }
 
@@ -120,7 +101,7 @@ func InitAccount(envId uint64, coinsJson string) *C.char {
 
 	}
 
-	err := simapp.FundAccount(env.App.BankKeeper, env.Ctx, accAddr, coins)
+	err := banktestutil.FundAccount(env.App.BankKeeper, env.Ctx, accAddr, coins)
 	if err != nil {
 		panic(errors.Wrapf(err, "Failed to fund account"))
 	}
@@ -135,7 +116,7 @@ func InitAccount(envId uint64, coinsJson string) *C.char {
 //export IncreaseTime
 func IncreaseTime(envId uint64, seconds uint64) {
 	env := loadEnv(envId)
-	env.BeginNewBlock(false, seconds)
+	env.BeginNewBlock(seconds)
 	envRegister.Store(envId, env)
 	EndBlock(envId)
 }
@@ -143,7 +124,7 @@ func IncreaseTime(envId uint64, seconds uint64) {
 //export BeginBlock
 func BeginBlock(envId uint64) {
 	env := loadEnv(envId)
-	env.BeginNewBlock(false, 5)
+	env.BeginNewBlock(5)
 	envRegister.Store(envId, env)
 }
 
@@ -169,18 +150,26 @@ func Execute(envId uint64, base64ReqDeliverTx string) *C.char {
 	}
 
 	reqDeliverTx := abci.RequestDeliverTx{}
+	// print
+	// fmt.Printf("reqDeliverTxBytes: %v\n", reqDeliverTxBytes)
 	err = proto.Unmarshal(reqDeliverTxBytes, &reqDeliverTx)
+
+	// fmt.Printf("err: %v\n", err)
 	if err != nil {
 		return encodeErrToResultBytes(result.ExecuteError, err)
 	}
 
 	resDeliverTx := env.App.DeliverTx(reqDeliverTx)
+
+	fmt.Println("resDeliverTx", resDeliverTx.Data)
 	bz, err := proto.Marshal(&resDeliverTx)
 
+	// fmt.Printf("err: %v\n", err)
 	if err != nil {
 		panic(err)
 	}
 
+	// fmt.Printf("bz: %v\n", bz)
 	envRegister.Store(envId, env)
 
 	return encodeBytesResultBytes(bz)
@@ -228,13 +217,11 @@ func AccountSequence(envId uint64, bech32Address string) uint64 {
 	env := loadEnv(envId)
 
 	addr, err := sdk.AccAddressFromBech32(bech32Address)
-
 	if err != nil {
 		panic(err)
 	}
 
 	seq, err := env.App.AppKeepers.AccountKeeper.GetSequence(env.Ctx, addr)
-
 	if err != nil {
 		panic(err)
 	}
@@ -247,7 +234,6 @@ func AccountNumber(envId uint64, bech32Address string) uint64 {
 	env := loadEnv(envId)
 
 	addr, err := sdk.AccAddressFromBech32(bech32Address)
-
 	if err != nil {
 		panic(err)
 	}
@@ -269,7 +255,6 @@ func Simulate(envId uint64, base64TxBytes string) *C.char { // => base64GasInfo
 	}
 
 	gasInfo, _, err := env.App.Simulate(txBytes)
-
 	if err != nil {
 		return encodeErrToResultBytes(result.ExecuteError, err)
 	}
@@ -351,16 +336,16 @@ func GetParamSet(envId uint64, subspaceName, typeUrl string) *C.char {
 }
 
 //export GetValidatorAddress
-func GetValidatorAddress(envId uint64, n int32) *C.char {
+func GetValidatorAddress(envId uint64, i int32) *C.char {
 	env := loadEnv(envId)
-	return C.CString(env.GetValidatorAddresses()[n])
+	return C.CString(env.GetValidatorAddresses()[i])
 }
 
 //export GetValidatorPrivateKey
-func GetValidatorPrivateKey(envId uint64, n int32) *C.char {
+func GetValidatorPrivateKey(envId uint64, i int32) *C.char {
 	env := loadEnv(envId)
 
-	priv := env.ValPrivs[n].Key
+	priv := env.ValPrivs[i].Key
 	base64Priv := base64.StdEncoding.EncodeToString(priv)
 	return C.CString(base64Priv)
 }
@@ -369,11 +354,10 @@ func GetValidatorPrivateKey(envId uint64, n int32) *C.char {
 
 func loadEnv(envId uint64) testenv.TestEnv {
 	item, ok := envRegister.Load(envId)
-	env := testenv.TestEnv(item.(testenv.TestEnv))
 	if !ok {
 		panic(fmt.Sprintf("env not found: %d", envId))
 	}
-	return env
+	return item.(testenv.TestEnv)
 }
 
 func encodeErrToResultBytes(code byte, err error) *C.char {

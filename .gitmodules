@@ -3,3 +3,6 @@
 	url = https://github.com/osmosis-labs/osmosis.git
 	branch = main
 
+[submodule "packages/persistence-test-tube/persistencecore"]
+	path = packages/persistence-test-tube/persistencecore
+	url = https://github.com/persistenceOne/persistenceCore.git

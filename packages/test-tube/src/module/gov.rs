@@ -9,17 +9,17 @@ use persistence_std::types::cosmos::bank::v1beta1::{
 use crate::module::Module;
 use crate::runner::Runner;
 
-pub struct Bank<'a, R: Runner<'a>> {
+pub struct Gov<'a, R: Runner<'a>> {
     runner: &'a R,
 }
 
-impl<'a, R: Runner<'a>> Module<'a, R> for Bank<'a, R> {
+impl<'a, R: Runner<'a>> Module<'a, R> for Gov<'a, R> {
     fn new(runner: &'a R) -> Self {
         Self { runner }
     }
 }
 
-impl<'a, R> Bank<'a, R>
+impl<'a, R> Gov<'a, R>
 where
     R: Runner<'a>,
 {
