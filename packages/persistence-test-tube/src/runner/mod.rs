@@ -9,11 +9,11 @@ mod tests {
     use super::app::PersistenceTestApp;
     use cosmwasm_std::{to_binary, BankMsg, Coin, CosmosMsg, Empty, Event, WasmMsg};
     use cw1_whitelist::msg::{ExecuteMsg, InstantiateMsg};
-    use test_tube::account::Account;
-    use test_tube::runner::error::RunnerError::{ExecuteError, QueryError};
-    use test_tube::runner::result::RawResult;
-    use test_tube::runner::Runner;
-    use test_tube::{Module, RunnerExecuteResult};
+    use test_tube_x::account::Account;
+    use test_tube_x::runner::error::RunnerError::{ExecuteError, QueryError};
+    use test_tube_x::runner::result::RawResult;
+    use test_tube_x::runner::Runner;
+    use test_tube_x::{Module, RunnerExecuteResult};
 
     #[derive(::prost::Message)]
     struct AdhocRandomQueryRequest {

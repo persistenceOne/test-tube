@@ -161,7 +161,6 @@ func Execute(envId uint64, base64ReqDeliverTx string) *C.char {
 
 	resDeliverTx := env.App.DeliverTx(reqDeliverTx)
 
-	fmt.Println("resDeliverTx", resDeliverTx.Data)
 	bz, err := proto.Marshal(&resDeliverTx)
 
 	// fmt.Printf("err: %v\n", err)

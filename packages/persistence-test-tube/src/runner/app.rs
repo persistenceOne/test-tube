@@ -5,11 +5,11 @@ use cosmwasm_std::{Coin, Timestamp};
 
 use prost::Message;
 use serde::de::DeserializeOwned;
-use test_tube::account::SigningAccount;
+use test_tube_x::account::SigningAccount;
 
-use test_tube::runner::result::{RunnerExecuteResult, RunnerResult};
-use test_tube::runner::Runner;
-use test_tube::BaseApp;
+use test_tube_x::runner::result::{RunnerExecuteResult, RunnerResult};
+use test_tube_x::runner::Runner;
+use test_tube_x::BaseApp;
 
 const FEE_DENOM: &str = "uxprt";
 const OSMO_ADDRESS_PREFIX: &str = "persistence";
@@ -154,10 +154,10 @@ mod tests {
     use cosmwasm_std::{attr, coins, Coin};
 
     use crate::runner::app::PersistenceTestApp;
-    use test_tube::account::{Account, FeeSetting};
-    use test_tube::module::Module;
-    use test_tube::{ExecuteResponse, Wasm, Bank};
-    use test_tube::{runner::*, RunnerError};
+    use test_tube_x::account::{Account, FeeSetting};
+    use test_tube_x::module::Module;
+    use test_tube_x::{ExecuteResponse, Wasm, Bank};
+    use test_tube_x::{runner::*, RunnerError};
 
     #[test]
     fn test_init_accounts() {
