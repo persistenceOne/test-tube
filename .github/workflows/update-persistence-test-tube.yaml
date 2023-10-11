@@ -1,16 +1,16 @@
-name: update osmosis-test-tube
+name: update persistence-test-tube
 on:
   workflow_dispatch:
-    name: update osmosis-test-tube
+    name: update persistence-test-tube
     inputs:
-      osmosis_rev:
-        description: "osmosis revision"
+      persistence_rev:
+        description: "persistence revision"
         required: true
         type: string
 
   workflow_call:
     inputs:
-      osmosis_rev:
+      persistence_rev:
         required: true
         type: string
 
@@ -45,7 +45,7 @@ jobs:
       - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          ./scripts/update-osmosis-test-tube.sh "$OSMOSIS_REV"
+          ./scripts/update-persistence-test-tube.sh "$persistence_REV"
 
         env:
-          OSMOSIS_REV: ${{ inputs.osmosis_rev }}
+          persistence_REV: ${{ inputs.persistence_rev }}
