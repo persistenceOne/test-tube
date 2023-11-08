@@ -2,8 +2,6 @@ module github.com/persistenceOne/test-tube/persistence-test-tube
 
 go 1.21
 
-toolchain go1.21.0
-
 // use persistence's forks with LSM implemented
 replace (
 	github.com/CosmWasm/wasmd => github.com/persistenceOne/wasmd v0.40.2-lsm3

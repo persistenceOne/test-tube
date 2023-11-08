@@ -147,17 +147,14 @@ impl<'a> Runner<'a> for PersistenceTestApp {
 
 #[cfg(test)]
 mod tests {
-    use prost::Message;
     use std::option::Option::None;
 
-    use cosmrs::Any;
-    use cosmwasm_std::{attr, coins, Coin};
+    use cosmwasm_std::{coins, Coin};
 
     use crate::runner::app::PersistenceTestApp;
-    use test_tube_x::account::{Account, FeeSetting};
+    use test_tube_x::account::Account;
     use test_tube_x::module::Module;
-    use test_tube_x::{ExecuteResponse, Wasm, Bank};
-    use test_tube_x::{runner::*, RunnerError};
+    use test_tube_x::Wasm;
 
     #[test]
     fn test_init_accounts() {
