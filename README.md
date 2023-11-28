@@ -1,10 +1,16 @@
-# test-tube
+# Test Tube X
 
-![test](https://github.com/osmosis-labs/test-tube/actions/workflows/test.yml/badge.svg)
+[`test-tube`](https://github.com/osmosis-labs/test-tube) is a generic library by Osmosis for building testing environments for [CosmWasm](https://cosmwasm.com/) smart contracts. It allows you to test your smart contract logic against the actual Cosmos SDK chain's logic, which is written in Go, using Rust. This eliminates the need to write Go code or learn Go in order to test your smart contracts against the Cosmos SDK.
 
-`test-tube` is a generic library for building testing environments for [CosmWasm](https://cosmwasm.com/) smart contracts. It allows you to test your smart contract logic against the actual Cosmos SDK chain's logic, which is written in Go, using Rust. This eliminates the need to write Go code or learn Go in order to test your smart contracts against the Cosmos SDK.
+`test-tube-x` is a fork of test-tube by Persistence made using newer versions of Cosmos SDK (v47). It can be used by anyone to create a testing environments by anyone using the following defaults:
+- Cosmos SDK v47
+- Persistence SDK v2
+- Cosmwasm v1.4
 
-`test-tube` is currently used to build [`osmosis-test-tube`](https://github.com/osmosis-labs/test-tube/tree/main/packages/osmosis-test-tube), but it can be used to build testing environments for any Cosmos SDK-based chain. To do this, you will need to build a shared library that exports the functions described [here](https://github.com/osmosis-labs/test-tube/blob/ddae11d003b5d900bdee2026034b9b1d4c33bdb3/packages/test-tube/src/bindings.rs#L211-L241). You can use the [Go code](https://github.com/osmosis-labs/test-tube/tree/main/packages/osmosis-test-tube/libosmosistesttube) and [build script](https://github.com/osmosis-labs/test-tube/blob/main/packages/osmosis-test-tube/build.rs) from `osmosis-test-tube` as a reference.
+
+`test-tube-x` is currently used to build [`persistence-test-tube`](https://github.com/persistenceOne/test-tube/tree/main/packages/persistence-test-tube). 
+
+You can refer to Osmosis Test tube [docs](https://github.com/osmosis-labs/test-tube) to get more information on how to build upon test-tube or test-tube-x.
 
 ## Features
 
@@ -21,7 +27,7 @@ So if your contract just interact with common modules like Bank, Staking, and Di
 
 ## Contributing
 
-We welcome contributions to `test-tube`! If you find a bug or have an idea for a new feature, please open an issue or submit a pull request.
+We welcome contributions to `test-tube-x`! If you find a bug or have an idea for a new feature, please open an issue or submit a pull request.
 
 ## License
 
