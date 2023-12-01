@@ -4,7 +4,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 name = "test-tube-x"
 repository = "https://github.com/persistenceCore/test-tube"
-version = "1.1.0"
+version = "1.1.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -25,7 +25,7 @@ rayon = "1.5.3"
 [features]
 default = []
 
-module-wrappers = ["bank", "wasm"]
+module-wrappers = ["bank", "wasm", "staking"]
 
 bank = ["persistence-std"]
 wasm = ["persistence-std"]
