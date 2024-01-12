@@ -4,7 +4,7 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 name = "persistence-test-tube"
 repository = "https://github.com/persistenceOne/test-tube"
-version = "1.0.0"
+version = "1.1.2"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 exclude = ["persistenceCore", "test_artifacts"]
@@ -13,11 +13,11 @@ exclude = ["persistenceCore", "test_artifacts"]
 base64 = "0.13.0"
 cosmrs = {version = "0.15.0", features = ["cosmwasm"]}
 cosmwasm-std = "1.4.0"
-persistence-std = "1.0.0"
+persistence-std = "1.1.1"
 prost = "0.12.0"
 serde = "1.0.144"
 serde_json = "1.0.85"
-test-tube-x = {version = "1.0.0", path = "../test-tube-x", features = ["module-wrappers"]}
+test-tube-x = {version = "1.1.0", path = "../test-tube-x", features = ["module-wrappers"]}
 thiserror = "1.0.34"
 
 [build-dependencies]
