@@ -16,38 +16,21 @@ func main() {
 	// Get the absolute path of this binary's directory
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 
-	// store args[1] as osmosis rev
-	osmosisRev := os.Args[1]
+	// store args[1] as persistence rev
+	persistenceRev := os.Args[1]
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	libosmosistesttubeModPath := filepath.Join(dir, "../../packages/osmosis-test-tube/libosmosistesttube/go.mod")
-	osmosisModUrl := fmt.Sprintf("https://raw.githubusercontent.com/osmosis-labs/osmosis/%s/go.mod", osmosisRev)
+	libpersistencetesttubeModPath := filepath.Join(dir, "../../packages/persistence-test-tube/libpersistencetesttube/go.mod")
+	persistenceModUrl := fmt.Sprintf("https://raw.githubusercontent.com/persistenceOne/persistenceCore/%s/go.mod", persistenceRev)
 
-	libosmosistestingMod := readModFromFile(libosmosistesttubeModPath)
+	libpersistencetesttubeMod := readModFromFile(libpersistencetesttubeModPath)
+	persistenceMod := readModFromUrl(persistenceModUrl)
 
-	osmosisMod := readModFromUrl(osmosisModUrl)
-
-	replaceModFileReplaceDirectives(osmosisMod, libosmosistestingMod)
-
-	// replace internal packages
-	osmosisInternalRequires := make(map[string]string)
-	for _, req := range osmosisMod.Require {
-		if req.Mod.Path == "github.com/osmosis-labs/osmosis/osmomath" ||
-			req.Mod.Path == "github.com/osmosis-labs/osmosis/osmoutils" ||
-			req.Mod.Path == "github.com/osmosis-labs/osmosis/x/ibc-hooks" {
-			osmosisInternalRequires[req.Mod.Path] = req.Mod.Version
-		}
-	}
-
-	// add replace directives with osmosisInternalRequires
-	for path, version := range osmosisInternalRequires {
-		libosmosistestingMod.AddReplace(path, "", path, version)
-	}
-
-	writeMod(libosmosistestingMod, libosmosistesttubeModPath)
+	replaceModFileReplaceDirectives(persistenceMod, libpersistencetesttubeMod)
+	writeMod(libpersistencetesttubeMod, libpersistencetesttubeModPath)
 }
 
 func readModFromUrl(url string) *modfile.File {

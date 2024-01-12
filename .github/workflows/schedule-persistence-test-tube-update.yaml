@@ -1,4 +1,4 @@
-name: schedule osmosis-test-tube update
+name: schedule persistence-test-tube update
 on:
   push:
     branches: ["main"]
@@ -26,6 +26,6 @@ jobs:
     needs: populate-matrix
     strategy:
       matrix: ${{fromJson(needs.populate-matrix.outputs.matrix)}}
-    uses: ./.github/workflows/update-osmosis-test-tube.yaml
+    uses: ./.github/workflows/update-persistence-test-tube.yaml
     with:
-      osmosis_rev: ${{ matrix.target }}
+      persistence_rev: ${{ matrix.target }}
