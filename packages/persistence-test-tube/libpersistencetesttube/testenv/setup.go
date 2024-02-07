@@ -3,13 +3,14 @@ package testenv
 import (
 	"encoding/json"
 	"fmt"
+	"os"
 	"time"
 
 	// cometbft
 
 	dbm "github.com/cometbft/cometbft-db"
 	abci "github.com/cometbft/cometbft/abci/types"
-	"github.com/cometbft/cometbft/libs/log"
+	tmlog "github.com/cometbft/cometbft/libs/log"
 	tmproto "github.com/cometbft/cometbft/proto/tendermint/types"
 	tmtypes "github.com/cometbft/cometbft/types"
 
@@ -85,8 +86,9 @@ func SetupPersistenceApp(chainID string, nodeHome string, valPriv *secp256k1.Pri
 		server.FlagInvCheckPeriod: 5,
 	}
 
+	logger := tmlog.NewTMLogger(tmlog.NewSyncWriter(os.Stdout))
 	appInstance := app.NewApplication(
-		log.NewNopLogger(),
+		logger,
 		db,
 		nil,
 		true,
